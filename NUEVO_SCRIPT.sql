@@ -39,6 +39,11 @@ BEGIN
   WHERE Matricula = matri;
 END;
 CALL actualizar_alumno(1915031201,"panfilo","perez","perez","desconocido","hombre","12345","132415","pnafilo@dominio.com",1,1,1);
+DROP PROCEDURE IF EXISTS insertar_alumno;
+CREATE PROCEDURE insertar_alumno(IN nom VARCHAR(40),IN pat VARCHAR(40),IN mater VARCHAR(40),IN dom VARCHAR(150),IN sex VARCHAR(8),IN ims VARCHAR(12),IN curp VARCHAR(14), IN correo VARCHAR(30),IN gru INT(11), IN cuat INT(11), IN cam INT(11))
+BEGIN
+
+END;
 
 /*PROCEDIMIENTOS ALMACENADOS PARA asesor*/
 DROP PROCEDURE IF EXISTS consultar_asesores;
@@ -58,3 +63,36 @@ CREATE PROCEDURE eliminar_asesor(IN id_ase INT(11))
 BEGIN
   DELETE FROM asesor_academico WHERE Id_asesor = id_ase;
 END;
+
+DROP PROCEDURE IF EXISTS insertar_asesor;
+CREATE PROCEDURE insertar_asesor(IN nom VARCHAR(40), IN pat VARCHAR(40), IN mat VARCHAR(40))
+BEGIN
+INSERT INTO asesor_academico(Nombre_asesor,Ap_paterno_asesor,Ap_materno_asesor) VALUES(nom,pat,mat);
+END;
+CALL insertar_asesor("ernesto","amaro","hernandez");
+
+DROP PROCEDURE IF EXISTS actualizar_asesor;
+CREATE PROCEDURE actualizar_asesor(IN id INT(11), IN nom VARCHAR(40), IN pat VARCHAR(40),IN mat VARCHAR(40))
+BEGIN
+UPDATE asesor_academico
+SET
+Nombre_asesor = nom,
+Ap_paterno_asesor = pat,
+Ap_materno_asesor = mat
+WHERE Id_asesor = id;
+END;
+
+CALL actualizar_asesor(1,"Francisco","Mujica","Reyes");
+
+load data infile "C:\\Users\\hi_en\\Downloads\\hoja.csv"
+into table alumno
+fields terminated by ','
+optionally enclosed by '"'
+lines terminated by '\r\n';
+
+
+select * into outfile "C:\\Users\\hi_en\\Downloads\\hoja2.csv"
+fields TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+from alumno;
