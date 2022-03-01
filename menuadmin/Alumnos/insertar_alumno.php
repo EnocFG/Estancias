@@ -18,7 +18,7 @@
     </div>
       </div>
 </div>
-<form class="formulario" action="" method="">
+<form class="formulario" action="validar_insertar.php" method="POST">
     <h1 class="encabezado">DATOS ALUMNO</h1>
         <input type="text" id="Matricula" name="Matricula" placeholder="matricula" class="input" onblur="buscar_datos();"><br>
         <input type="text" id="Nombre_alumno" name="Nombre_alumno" placeholder="nombre" class="input" required><br>
