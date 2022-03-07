@@ -29,7 +29,7 @@ $conexion = mysqli_connect('localhost','root','','estancias');
                 <td>Ap Materno</td>
             </tr>
             <?php
-            $sql="CALL consultar_asesor";
+            $sql="CALL consultar_asesores";
             $result=mysqli_query($conexion,$sql);
             while($mostrar=mysqli_fetch_array($result)){
             ?>

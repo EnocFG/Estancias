@@ -27,17 +27,16 @@
         <label for="">Programa Educativo
         <select name="programas">
             <?php
-            require'conexion.php';
-            $obtenerProgramas = "SELECT * FROM programa_educativo";
-            $obtenerProgramas2 = mysqli_query($conn,$obtenerProgramas);
-            while($row = mysqli_fetch_array($obtenerProgramas2))
-            {
+            require 'conexion.php';
+            $obtenerProgramas = 'SELECT * FROM programa_educativo';
+            $obtenerProgramas2 = mysqli_query($conn, $obtenerProgramas);
+            while ($row = mysqli_fetch_array($obtenerProgramas2)) {
+
                 $Id_programa_educativo = $row['Id_programa_educativo'];
                 $Descripcion_pe = $row['Descripcion_pe'];
-
                 ?>
                 <option value="<?php echo $Id_programa_educativo; ?>"> <?php echo $Descripcion_pe; ?> </option>
-                <?php    
+                <?php
             }
             ?>
         </select>
@@ -51,6 +50,7 @@
          <label for="">Nombre del Proyecto <input type="text" name="Nombre_proyecto" id=""></label>
         <!-- </div> -->
         <input type="submit" value="Insertar">
+        <input type="button" value="Cancelar" class="btn btn-danger" onclick="limpiar();">
     </form>  
 </body>
 </html>
