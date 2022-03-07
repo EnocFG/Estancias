@@ -12,9 +12,7 @@
     <div class="resultados">
     <form method="POST" action="validar_insertar.php">
      
-        <label for="">ID empresa
-        <input type="text" name="id_empresa" id="id_empresa">
-        </label>
+
         <input type="hidden" name="action" id="action">
 
         <br>

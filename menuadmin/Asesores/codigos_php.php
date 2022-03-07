@@ -1,6 +1,6 @@
 
 <?php
-include 'conexion.php';
+include '../../conexion.php';
 if (isset($_POST['buscar'])) {
     $Id_asesor = $_POST['Id_asesor'];
     $valores = [];

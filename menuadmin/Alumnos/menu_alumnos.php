@@ -1,6 +1,5 @@
 <?php
-require('conexion.php');
-?>
+require '../../conexion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -38,26 +37,24 @@ require('conexion.php');
                 <td>Campus</td>
             </tr>
             <?php
-            $sql="CALL consultar_alumnos()";
-            $result=mysqli_query($conn,$sql);
-            while($mostrar=mysqli_fetch_array($result)){
-            ?>
+            $sql = 'CALL consultar_alumnos()';
+            $result = mysqli_query($conn, $sql);
+            while ($mostrar = mysqli_fetch_array($result)) { ?>
             <tr>
-                <td><?php echo $mostrar['Matricula']?> </td>
-                <td><?php echo $mostrar['Nombre_alumno']?> </td>
-                <td><?php echo $mostrar['Ap_paterno_alumno']?> </td>
-                <td><?php echo $mostrar['Ap_materno_alumno']?> </td>
-                <td><?php echo $mostrar['Domicilio']?> </td>
-                <td><?php echo $mostrar['Sexo']?> </td>
-                <td><?php echo $mostrar['IMSS']?> </td>
-                <td><?php echo $mostrar['CURP']?> </td>
-                <td><?php echo $mostrar['Correo_electronico']?> </td>
-                <td><?php echo $mostrar['id_grupo_fk']?> </td>
-                <td><?php echo $mostrar['id_cuatrimestre_fk']?> </td>
-                <td><?php echo $mostrar['id_campus_fk']?> </td>
+                <td><?php echo $mostrar['Matricula']; ?> </td>
+                <td><?php echo $mostrar['Nombre_alumno']; ?> </td>
+                <td><?php echo $mostrar['Ap_paterno_alumno']; ?> </td>
+                <td><?php echo $mostrar['Ap_materno_alumno']; ?> </td>
+                <td><?php echo $mostrar['Domicilio']; ?> </td>
+                <td><?php echo $mostrar['Sexo']; ?> </td>
+                <td><?php echo $mostrar['IMSS']; ?> </td>
+                <td><?php echo $mostrar['CURP']; ?> </td>
+                <td><?php echo $mostrar['Correo_electronico']; ?> </td>
+                <td><?php echo $mostrar['id_grupo_fk']; ?> </td>
+                <td><?php echo $mostrar['id_cuatrimestre_fk']; ?> </td>
+                <td><?php echo $mostrar['id_campus_fk']; ?> </td>
             </tr>
-            <?php
-            }
+            <?php }
             ?>
         </table>
 

@@ -1,6 +1,6 @@
 <?php
 
-require('conexion.php');
+require('../../conexion.php');
 
 $Id_asesor = $_POST['Id_asesor'];
 $Nombre_asesor = $_POST['Nombre_asesor'];

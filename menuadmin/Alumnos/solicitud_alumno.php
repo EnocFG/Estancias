@@ -9,7 +9,6 @@
 <body>
     <h1>Llenado de solicitud Alumno</h1>
     <form action="" method="post">
-        <!-- <div style="float:left"> -->
         <label for="">ID solicitud <input type="text" name="id_solicitud" id=""></label><br>
          <label for="">Nombre <input type="text" name="Nombre_alumno_sol" id=""></label><br>
         <label for="">Apellido paterno <input type="text" name="Ap_paterno_alumno_sol" id=""></label><br>
@@ -20,14 +19,12 @@
          <label for="">CURP <input type="text" name="CURP" id=""></label><br>
          <label for="">Matricula <input type="text" name="Matricula_fk" id=""></label><br>
          <label for="">Correo Electronico <input type="text" name="" id="correo_electronico_fk"></label><br>
-        <!-- </div> -->
-        <!-- <div style="float:left"> -->
          <label for="">ID telefono <input type="text" name="id_telefono_al_fk" id=""></label><br>
          <label for="">Fecha Elaboracion <input type="date" name="Fecha_elaboracion" id=""></label><br>
         <label for="">Programa Educativo
         <select name="programas">
             <?php
-            require 'conexion.php';
+            require '../../conexion.php';
             $obtenerProgramas = 'SELECT * FROM programa_educativo';
             $obtenerProgramas2 = mysqli_query($conn, $obtenerProgramas);
             while ($row = mysqli_fetch_array($obtenerProgramas2)) {

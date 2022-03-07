@@ -1,6 +1,6 @@
 <?php
 //funcion para llamar el archivo conexion
-require('conexion.php');
+require('../../conexion.php');
 
 $Matricula = $_POST['Matricula'];
 $Nombre_alumno = $_POST['Nombre_alumno'];

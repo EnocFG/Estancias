@@ -1,6 +1,6 @@
 <?php
 //funcion para llamar el archivo conexion
-require('conexion.php');
+require('../conexion.php');
 //variables del formulario
 //el post sirve para colocar en la bd los datos
 

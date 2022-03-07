@@ -1,6 +1,5 @@
 <?php
-require 'conexion.php'
-?>
+require '../../conexion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -35,19 +34,17 @@ require 'conexion.php'
                 <td>Correo Electronico</td>
             </tr>
             <?php
-            $sql="CALL consultar_empresa()";
-            $result=mysqli_query($conn,$sql);
-            while($mostrar=mysqli_fetch_array($result)){
-            ?>
+            $sql = 'CALL consultar_empresas()';
+            $result = mysqli_query($conn, $sql);
+            while ($mostrar = mysqli_fetch_array($result)) { ?>
             <tr>
-                <td><?php echo $mostrar['id_empresa'] ?></td>
-                <td><?php echo $mostrar['Nombre_empresa'] ?></td>
-                <td><?php echo $mostrar['Domicilio_empresa'] ?></td>
-                <td><?php echo $mostrar['Telefono_empresa'] ?></td>
-                <td><?php echo $mostrar['Correo_electronico'] ?></td>
+                <td><?php echo $mostrar['id_empresa']; ?></td>
+                <td><?php echo $mostrar['Nombre_empresa']; ?></td>
+                <td><?php echo $mostrar['Domicilio_empresa']; ?></td>
+                <td><?php echo $mostrar['Telefono_empresa']; ?></td>
+                <td><?php echo $mostrar['Correo_electronico']; ?></td>
             </tr>
-            <?php 
-            }
+            <?php }
             ?>
         </table>
     </div>

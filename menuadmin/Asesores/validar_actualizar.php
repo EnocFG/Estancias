@@ -1,5 +1,5 @@
 <?php 
-require('conexion.php');
+require('../../conexion.php');
 
 $Id_asesor = $_GET['Id_asesor'];
 $Nombre_asesor = $_GET['Nombre_asesor'];

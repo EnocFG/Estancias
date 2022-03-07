@@ -1,5 +1,5 @@
 <?php 
-require 'conexion.php';
+require '../../conexion.php';
 
 $id_empresa = $_POST['id_empresa'];
 

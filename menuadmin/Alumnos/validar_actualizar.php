@@ -1,6 +1,6 @@
 <?php
 
-include('conexion.php');
+include('../../conexion.php');
 
 $Matricula = $_GET['Matricula'];
 $Nombre_alumno = $_GET['Nombre_alumno'];

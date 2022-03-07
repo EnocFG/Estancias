@@ -1,6 +1,5 @@
-<?php 
-$conexion = mysqli_connect('localhost','root','','estancias');
-?>
+<?php
+require '../../conexion.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,18 +28,16 @@ $conexion = mysqli_connect('localhost','root','','estancias');
                 <td>Ap Materno</td>
             </tr>
             <?php
-            $sql="CALL consultar_asesores";
-            $result=mysqli_query($conexion,$sql);
-            while($mostrar=mysqli_fetch_array($result)){
-            ?>
+            $sql = 'CALL consultar_asesores';
+            $result = mysqli_query($conn, $sql);
+            while ($mostrar = mysqli_fetch_array($result)) { ?>
             <tr>
-                <td><?php echo $mostrar['Id_asesor'] ?></td>
-                <td><?php echo $mostrar['Nombre_asesor'] ?></td>
-                <td><?php echo $mostrar['Ap_paterno_asesor'] ?></td>
-                <td><?php echo $mostrar['Ap_materno_asesor'] ?></td>
+                <td><?php echo $mostrar['Id_asesor']; ?></td>
+                <td><?php echo $mostrar['Nombre_asesor']; ?></td>
+                <td><?php echo $mostrar['Ap_paterno_asesor']; ?></td>
+                <td><?php echo $mostrar['Ap_materno_asesor']; ?></td>
             </tr>
-            <?php 
-            }
+            <?php }
             ?>
         </table>
     </div>

@@ -39,28 +39,25 @@
         <label for="">Asesor</label>
         <select class="form-select" name="asesores">
           <?php
-          require 'conexion.php';
-          $obtenerAsesores = "SELECT * FROM asesor_academico";
-          $obtenerAsesores2 = mysqli_query($conn,$obtenerAsesores);
-          while($row = mysqli_fetch_array($obtenerAsesores2))
-          {
-            $Id_asesor = $row['Id_asesor'];
-            $Nombre_asesor = $row['Nombre_asesor'];
-            $Ap_paterno_asesor = $row['Ap_paterno_asesor'];
-            $Ap_materno_asesor = $row['Ap_materno_asesor'];
-          ?>
-          <option value="<?php echo $Id_asesor;?>"> <?php echo $Nombre_asesor; ?> <?php echo $Ap_paterno_asesor; ?> <?php echo $Ap_materno_asesor; ?></option>
+          require '../conexion.php';
+          $obtenerAsesores = 'SELECT * FROM asesor_academico';
+          $obtenerAsesores2 = mysqli_query($conn, $obtenerAsesores);
+          while ($row = mysqli_fetch_array($obtenerAsesores2)) {
+
+              $Id_asesor = $row['Id_asesor'];
+              $Nombre_asesor = $row['Nombre_asesor'];
+              $Ap_paterno_asesor = $row['Ap_paterno_asesor'];
+              $Ap_materno_asesor = $row['Ap_materno_asesor'];
+              ?>
+          <option value="<?php echo $Id_asesor; ?>"> <?php echo $Nombre_asesor; ?> <?php echo $Ap_paterno_asesor; ?> <?php echo $Ap_materno_asesor; ?></option>
           <?php
           }
           ?>
         </select><br>
-       
-        <!--  <input type="text" id="asesor" name="asesor" placeholder="asesor academico" class="input" required><br></br>
-        <br> -->
 
-        <input type="button" id="enviar" name="Enviar" value="Siguiente">
-        <input type="submit" name="Menu" onclick="location.href='menualum.php'" value="Menú">
         <input type="button" value="Cancelar" onclick="limpiar();">
+        <input type="button" id="enviar" name="Enviar" value="Siguiente" href="#">
+        <input type="submit" name="Menu" onclick="location.href='menualum.php'" value="Menú">
         <p class="warning" id="warning" ></p>
     </form>
 </div>
@@ -116,5 +113,19 @@
         $("#Telefono_celular_al").val(valores.Telefono_celular_al);           
       }
     })
+    };
+    function limpiar(){
+      $("#Matricula").val("");
+      $("#Nombre_alumno").val("");
+      $("#Ap_paterno_alumno").val("");
+      $("#Ap_materno_alumno").val("");
+      $("#Domicilio").val("");
+      $("#Sexo").val("");
+      $("#IMSS").val("");
+      $("#CURP").val("");
+      $("#Correo_electronico").val("");
+      $("#Telefono_casa_al").val("");
+      $("#Telefono_celular_al").val("");
+
     }
   </script>

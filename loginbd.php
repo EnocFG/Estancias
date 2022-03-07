@@ -24,7 +24,7 @@ $_SESSION['txtusuario'] = $usuario;
 $consulta =
     "SELECT * FROM usuario WHERE usuario = '" .
     $usuario .
-    "' and contrasenia = '" .
+    "' and password = '" .
     $pass .
     "'";
 $query = mysqli_query($conn, $consulta);
@@ -33,12 +33,12 @@ $query = mysqli_query($conn, $consulta);
 $nr = mysqli_fetch_array($query);
 
 //si los datos son correctos da acceso
-if ($nr['id_cargo'] == 1) {
+if ($nr['rol_id'] == 1) {
     //envia al apartado administrador - admin (admin-admin1234)
     header('Location: menuadmin/menuad.php');
     //echo "Bienvenido: ".$nombre;
     //echo ['success_msg'];
-} elseif ($nr['id_cargo'] == 2) {
+} elseif ($nr['rol_id'] == 2) {
     //envia al apartado - alumno (alumno1-alumno1234)
     header('Location: menualumno/menualum.php');
     //echo "No ingresó";

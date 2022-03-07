@@ -1,5 +1,5 @@
 <?php
-require 'conexion.php';
+require '../../conexion.php';
 
 $id_empresa = $_GET['id_empresa'];
 $Nombre_empresa = $_GET['Nombre_empresa'];
