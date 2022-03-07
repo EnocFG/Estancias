@@ -96,3 +96,28 @@ fields TERMINATED BY ','
 OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 from alumno;
+
+/******CREACION DE UNA VISTA ALUMNO CON TELEFONO*******/
+DROP VIEW alumno_telefono;
+CREATE VIEW alumno_telefono
+AS
+  SELECT * FROM alumno AS a INNER JOIN telefono_alumno ON a.Matricula = telefono_alumno.Matricula_fk;
+  /*****vista que muestre solo dos columnas de telefono***/
+CREATE VIEW alumno_telefono
+AS
+SELECT
+*
+FROM alumno
+INNER JOIN telefono_alumno ta
+ON alumno.Matricula;
+
+
+SELECT * FROM alumno_telefono;
+
+SELECT * FROM empleados INNER JOIN departamentos ON empleados.e_id = departamentos.d_id;
+DROP PROCEDURE `PA_alumno`;
+CREATE PROCEDURE PA_alumno(IN Mat INT(11))
+BEGIN
+  SELECT * FROM alumno_telefono WHERE alumno_telefono.Matricula = Mat;
+END;
+CALL PA_alumno(1915031201);

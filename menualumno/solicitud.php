@@ -34,10 +34,29 @@
         <input type="text" id="CURP" name="CURP" placeholder="curp" class="input" required><br>
         <input type="email" id="Correo_electronico" name="Correo_electronico" placeholder="&#64 correo electronico" class="input" required><br>
 
-        <input type="tel" id="Telefono_casa_al" name="Telefono_casa_al" placeholder="&#9743 telefono" class="input" onblur="buscar_telefono();"><br>
-        <input type="tel" id="Telefono_celular_al" name="Telefono_celular_al" placeholder="&#9743 telefono movil" class="input" required><br>
-        <input type="text" id="asesor" name="asesor" placeholder="asesor academico" class="input" required><br></br>
-        <br>
+        <input type="text" id="Telefono_casa_al" name="Telefono_casa_al" placeholder="&#9743 telefono" class="input"><br>
+        <input type="text" id="Telefono_celular_al" name="Telefono_celular_al" placeholder="&#9743 telefono movil" class="input" required><br>
+        <label for="">Asesor</label>
+        <select class="form-select" name="asesores">
+          <?php
+          require 'conexion.php';
+          $obtenerAsesores = "SELECT * FROM asesor_academico";
+          $obtenerAsesores2 = mysqli_query($conn,$obtenerAsesores);
+          while($row = mysqli_fetch_array($obtenerAsesores2))
+          {
+            $Id_asesor = $row['Id_asesor'];
+            $Nombre_asesor = $row['Nombre_asesor'];
+            $Ap_paterno_asesor = $row['Ap_paterno_asesor'];
+            $Ap_materno_asesor = $row['Ap_materno_asesor'];
+          ?>
+          <option value="<?php echo $Id_asesor;?>"> <?php echo $Nombre_asesor; ?> <?php echo $Ap_paterno_asesor; ?> <?php echo $Ap_materno_asesor; ?></option>
+          <?php
+          }
+          ?>
+        </select><br>
+       
+        <!--  <input type="text" id="asesor" name="asesor" placeholder="asesor academico" class="input" required><br></br>
+        <br> -->
 
         <input type="button" id="enviar" name="Enviar" value="Siguiente">
         <input type="submit" name="Menu" onclick="location.href='menualum.php'" value="Menú">
@@ -66,7 +85,7 @@
     {
       data:  parametros,
       dataType: 'json',
-      url:   'codigos_PHP.php',
+      url:   'codigos_PHP copy.php',
       type:  'post',
       beforeSend: function()
       {
@@ -92,7 +111,9 @@
         $("#Sexo").val(valores.Sexo);
         $("#IMSS").val(valores.IMSS);
         $("#CURP").val(valores.CURP);
-        $("#Correo_electronico").val(valores.Correo_electronico);             
+        $("#Correo_electronico").val(valores.Correo_electronico); 
+        $("#Telefono_casa_al").val(valores.Telefono_casa_al);
+        $("#Telefono_celular_al").val(valores.Telefono_celular_al);           
       }
     })
     }
