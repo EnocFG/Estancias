@@ -6,11 +6,12 @@ body{
     background-color: #242930;
     padding: 0px;
     margin: 0px;
-    padding-top: 80px;
+    padding-top: 90px;
+
 }
 h1{
     color: white;
-    font-size: 25px;
+    font-size: 2.2vw;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -31,11 +32,11 @@ h1{
     box-shadow:0 0 20px 0 #000;
     border-radius: 20px;
     border: 2px solid gray;
-
     text-align: center;
     display: block;
 }
 .login input{
+    
     width: 90%;
     height: 30px;
     margin: 0.3rem;
@@ -50,7 +51,7 @@ h1{
     display: block;
 }
 .login input:focus{
-    width: 330px;
+    width: 24vw;
     border-color: yellowgreen;
 }
 .login button{

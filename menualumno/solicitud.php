@@ -82,7 +82,7 @@
     {
       data:  parametros,
       dataType: 'json',
-      url:   'codigos_PHP copy.php',
+      url:   'codigos_php.php',
       type:  'post',
       beforeSend: function()
       {
